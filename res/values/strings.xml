@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Tingkerbell</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="textView">Todo Here</string>
+    <string name="btnAdd">ADD</string>
+    <string name="task">taks</string>
+    <string name="add">add</string>
+    <string name="delete">delete</string>
+
+</resources>
