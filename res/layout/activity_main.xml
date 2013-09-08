@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:focusable="true"
+	android:focusableInTouchMode="true"
+    >
+
+    <LinearLayout
+	     android:id="@+id/upLayout"
+	     android:layout_width="fill_parent"
+	     android:layout_height="wrap_content"
+	     android:orientation="horizontal"
+	     >
+		 <EditText
+			 android:id="@+id/EditTitle"
+			 android:layout_weight="1"
+			 android:layout_width="0dp"
+		     android:layout_height="wrap_content"
+		     android:hint="@string/txtHint"
+		  	 ></EditText>
+		<Button
+		    android:id="@+id/btnAdd"
+		    android:layout_width="45dp"
+		    android:layout_height="wrap_content"
+		    android:text="@string/add" >
+		</Button>
+	</LinearLayout>
+    
+    <ExpandableListView
+        android:id="@+id/lvExp"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:cacheColorHint="#00000000"/>   
+
+</LinearLayout>
