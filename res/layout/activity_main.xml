@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:focusable="true"
-	android:focusableInTouchMode="true"
-    >
 
+<LinearLayout
+	 xmlns:android="http://schemas.android.com/apk/res/android"
+	 android:background="#ffffff"
+	 android:orientation="vertical"
+	 android:layout_width="fill_parent"
+	 android:layout_height="wrap_content"
+	 android:focusable="true"
+	 android:focusableInTouchMode="true"
+	 android:scrollbarAlwaysDrawVerticalTrack="true"
+	 android:fillViewport="true"
+	 >
     <LinearLayout
 	     android:id="@+id/upLayout"
 	     android:layout_width="fill_parent"
@@ -27,11 +31,77 @@
 		    android:text="@string/add" >
 		</Button>
 	</LinearLayout>
-    
-    <ExpandableListView
-        android:id="@+id/lvExp"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:cacheColorHint="#00000000"/>   
 
+	<LinearLayout 
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+	    >
+		 <ListView
+		     android:id="@+id/listView1"
+		     android:layout_width="fill_parent"
+		     android:layout_height="wrap_content"
+		     android:paddingLeft="20dp"
+		     android:scrollbars="none"
+		     android:textColor="#FFFFFF" >
+		</ListView>
+	</LinearLayout>
+	
+	 <LinearLayout
+	     android:layout_width="fill_parent"
+	     android:layout_height="wrap_content"
+	     android:orientation="horizontal" >
+
+	     <Button
+	         android:id="@+id/btnList"
+	         android:layout_width="0dp"
+	         android:layout_height="wrap_content"
+	         android:layout_weight="1"
+	         android:text="@string/list" >
+	     </Button>
+
+	     <Button
+	         android:id="@+id/btnVoice"
+	         android:layout_width="0dp"
+	         android:layout_height="wrap_content"
+	         android:layout_weight="1"
+	         android:text="@string/voice" >
+	     </Button>
+
+	     <Button
+	         android:id="@+id/btnSettin"
+	         android:layout_width="0dp"
+	         android:layout_height="wrap_content"
+	         android:layout_weight="1"
+	         android:text="@string/setting" >
+    	</Button>
+	</LinearLayout>
+	<LinearLayout 
+		android:layout_width="fill_parent"
+	     android:layout_height="wrap_content"
+	     android:orientation="horizontal" >
+	    <Button
+	         android:id="@+id/btnAddToda"
+	         android:layout_width="0dp"
+	         android:layout_height="wrap_content"
+	         android:layout_weight="1"
+	         android:text="@string/today" >
+	     </Button>
+
+	     <Button
+	         android:id="@+id/btnAddTomo"
+	         android:layout_width="0dp"
+	         android:layout_height="wrap_content"
+	         android:layout_weight="1"
+	         android:text="@string/tomorrow" >
+	     </Button>
+
+	     <Button
+	         android:id="@+id/btnTimeSet"
+	         android:layout_width="0dp"
+	         android:layout_height="wrap_content"
+	         android:layout_weight="1"
+	         android:text="@string/timeSet" >
+    	</Button>
+	</LinearLayout>
 </LinearLayout>
