@@ -4,4 +4,5 @@ Tingkerbell
 Android Application AtoZ
 
 1. SQLite DataBase
-2. ExpandListView
+2. ListView
+3. SimpleCursorAdapter
