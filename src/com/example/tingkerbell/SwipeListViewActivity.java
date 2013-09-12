@@ -19,6 +19,7 @@ public abstract class SwipeListViewActivity extends Activity {
 
 	public abstract ListView getListView();
 	public abstract void getSwipeItem(boolean isRight, int position);
+	public abstract void getSwipeItem(boolean isUp);
 	public abstract void onItemClickListener(ListAdapter adapter, int position);
 	public abstract void onItemLongClickListener(ListAdapter adapter, int position);
 
@@ -87,21 +88,23 @@ public abstract class SwipeListViewActivity extends Activity {
 		}
 
 		@Override
-		public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
-				float velocityY) {
+		public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
 			if (Math.abs(e1.getY() - e2.getY()) > REL_SWIPE_MAX_OFF_PATH) return false;
+			
 			if (e1.getX() - e2.getX() > REL_SWIPE_MIN_DISTANCE && Math.abs(velocityX) > REL_SWIPE_THRESHOLD_VELOCITY) {
-
 				int pos = list.pointToPosition((int) e1.getX(), (int) e2.getY());
-
-				if (pos >= 0 && temp_position == pos) getSwipeItem(false, pos);
+				if (pos >= 0 && temp_position == pos) 
+					getSwipeItem(false, pos);
 			} else if (e2.getX() - e1.getX() > REL_SWIPE_MIN_DISTANCE&& Math.abs(velocityX) > REL_SWIPE_THRESHOLD_VELOCITY) {
-
-				int pos = list
-						.pointToPosition((int) e1.getX(), (int) e2.getY());
+				int pos = list.pointToPosition((int) e1.getX(), (int) e2.getY());
 				if (pos >= 0 && temp_position == pos)
 					getSwipeItem(true, pos);
+			}
 
+			if (e1.getY() - e2.getY() > REL_SWIPE_MIN_DISTANCE && Math.abs(velocityY) > REL_SWIPE_THRESHOLD_VELOCITY) {
+					getSwipeItem(false);
+			} else if (e2.getY() - e1.getY() > REL_SWIPE_MIN_DISTANCE&& Math.abs(velocityY) > REL_SWIPE_THRESHOLD_VELOCITY) {
+					getSwipeItem(true);
 			}
 			return false;
 		}

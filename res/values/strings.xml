@@ -6,6 +6,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="txtHint">tyle todo</string>
     <string name="add">+</string>
+    <string name="up">√</string>
+    
+    
     <string name="today">Today</string>
     <string name="tomorrow">Tomorrow</string>
     <string name="timeSet">Time Set</string>
