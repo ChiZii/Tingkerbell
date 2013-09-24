@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:fillViewport="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true" >
+
+    <!-- INPUT EditText and Button -->
+
+    <LinearLayout
+        android:id="@+id/createLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/edtTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/txtHint" >
+        </EditText>
+
+        <Button
+            android:id="@+id/btnTitleCreate"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:text="@string/add" >
+        </Button>
+
+        <Button
+            android:id="@+id/btnTitleUpdate"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="#ff0000"
+            android:text="@string/up"
+            android:visibility="gone" >
+        </Button>
+    </LinearLayout>
+
+    <!-- MAIN -->
+
+    <FrameLayout
+        android:id="@+id/MainFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- UPDATE Textview and Button -->
+
+        <LinearLayout
+            android:id="@+id/UpdateLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <EditText
+                android:id="@+id/edtText"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/edittextbackground"
+                android:hint="@string/txtHint" >
+            </EditText>
+
+            <LinearLayout
+                android:id="@+id/UpdateButtonsLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/btnTodaUpdate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#ddff0000"
+                    android:text="@string/today" >
+                </Button>
+
+                <Button
+                    android:id="@+id/btnTomoUpdate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#ddff0000"
+                    android:text="@string/tomorrow" >
+                </Button>
+
+                <Button
+                    android:id="@+id/btnTimeUpdate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#ddff0000"
+                    android:text="@string/timeSet" >
+                </Button>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- LISTVIEW -->
+
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="20dp"
+            android:scrollbars="none"
+            android:textColor="#FFFFFF" >
+        </ListView>
+
+        <!-- SETTING Button -->
+
+        <LinearLayout
+            android:id="@+id/SettingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:visibility="gone"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/ButtonsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginTop="30dp">
+
+                <Button
+                    android:id="@+id/btnList"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/list" >
+                </Button>
+
+                <Button
+                    android:id="@+id/btnVoice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/voice" >
+                </Button>
+
+                <Button
+                    android:id="@+id/btnSetting"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/setting" >
+                </Button>
+            </LinearLayout>
+
+            <!-- SETTING page -->
+            <!-- List Page -->
+
+            <LinearLayout
+                android:id="@+id/PastListLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ff000000"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <ListView
+                    android:id="@+id/pastListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+                </ListView>
+            </LinearLayout>
+
+            <!-- Setting Page -->
+
+            <LinearLayout
+                android:id="@+id/SettingPageLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ff000000"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <include
+                    layout="@layout/setting" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>
